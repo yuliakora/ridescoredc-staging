@@ -3,7 +3,7 @@
 #### This document summarizes common bicycle safety models (LTS, BNA, EPJ) to support early ideation for Ride Score DC. The goal is not to prescribe a specific approach, but to document tradeoffs, data requirements, and potential validation ideas to inform discussion. ####
 ---
 
-## Bicycle Level of Traffic Stress (BLTS / LTS) — *Index*
+## Bicycle Level of Traffic Stress (BLTS / LTS) - *Index*
 - How stressful a street is to bike along
 - Levels 1 to 4, with 1 being low stress and 4 being strong stress, only acceptable for strong bikers
 	- Level 1: low volume traffic, simple, suitable for children
@@ -15,7 +15,7 @@
 - Reference: https://www.fairfaxcounty.gov/transportation/sites/transportation/files/Assets/Documents/PDF/transportation%20projects%2C%20studies%20and%20plans/cta/BLTS-Guidelines.pdf
 ---
 
-### **Bicycle Network Analysis** (BNA) - network analysis
+### **Bicycle Network Analysis** (BNA) - *network analysis*
 - Measures how well the bike network connects people to the places they want to go (a type of network analysis)
 - (!) limitations: with network analysis, the unit of analysis will be a neighborhood or another area, not individual road segments -> BNA scores neighborhoods, not bike trails; because Ride Score DC is envisioned as an app/companion for cyclists, this approach may be less useful if cyclists care about specific parts of bike trails rather than neighborhoods
 - Implemented by People for Bikes City Ratings
@@ -30,7 +30,7 @@
 - Method:
 	- Obtained bike accident data from city data portals
 	- Extract street data at location of accident from OSM: i.e. speed limit, whether there is a bike lane, the width and length of the street segment, distance to the nearest intersection; also estimate traffic volume using a formula
-	- **Unit of analysis** is an individual crash location; the modeled outcome ppp is the probability that a crash is severe-> **logistic regression**
+	- **Unit of analysis** is an individual crash location; the modeled outcome p is the probability that a crash is severe-> **logistic regression**
 	- Applied risk models on 1000 random points from a different city as a sensitivity check
 	- Models were trained using temporally split datasets (e.g., earlier years for training, later years for testing), with an emphasis on recent data to reflect current road conditions
 	- Evaluate accuracy of probability output of each model
@@ -38,14 +38,14 @@
 	- Cross-city model comparison shows that predictive ability is still high even when a model is run for a different city, suggesting that there are common drivers of accidents across different geographic locations
 	- Results can help inform city planning: like targeting high-risk bike segments for infrastructure improvement (which would be a different use case than Ride Score DC)
 - Limitations:
-	- Quality of OSM data generally good for big cities, but declines for smaller cities
+	- Quality of OSM data generally good for big cities, but declines for smaller cities (shouldn't be a limitation for DC)
 	- Potential difference in temporal coverage between OSM street data and bike accident data
 	- Other classification models may perform even better, but will not be as easily interpretable as this model
 - Source: https://link.springer.com/article/10.1140/epjds/s13688-021-00265-y
 ---
 
 ### **Definition of Safety**
-Are we going to measuring riding comfort (LTS) or risk of bike accident? Safety and comfort can be measured in different ways. The EPJ paper mentioned these ways of measuring biking safety:
+Are we going to measure riding comfort (LTS) or risk of bike accident? Safety and comfort can be measured in different ways. The EPJ paper mentioned these ways of measuring biking safety:
 1. Actual safety: data on actual accidents
 2. Perceived safety: how people personally evaluate risk of a bike road 
 3. Inferred safety: indirectly inferred through relative position or speed of cars to bicycles

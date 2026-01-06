@@ -1,6 +1,6 @@
 # Ride Score DC — Preliminary Research Notes
 
-This document summarizes common bicycle safety models (LTS, BNA, EPJ) to support early ideation for Ride Score DC. The goal is not to prescribe a specific approach, but to document tradeoffs, data requirements, and potential validation ideas to inform discussion.
+#### This document summarizes common bicycle safety models (LTS, BNA, EPJ) to support early ideation for Ride Score DC. The goal is not to prescribe a specific approach, but to document tradeoffs, data requirements, and potential validation ideas to inform discussion. ####
 ---
 
 ## Bicycle Level of Traffic Stress (BLTS / LTS) — *Index*

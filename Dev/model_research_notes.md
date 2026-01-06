@@ -42,6 +42,7 @@
 	- Potential difference in temporal coverage between OSM street data and bike accident data
 	- Other classification models may perform even better, but will not be as easily interpretable as this model
 - Source: https://link.springer.com/article/10.1140/epjds/s13688-021-00265-y
+---
 
 ### **Definition of Safety**
 Are we going to measuring riding comfort (LTS) or risk of bike accident? Safety and comfort can be measured in different ways. The EPJ paper mentioned these ways of measuring biking safety:
